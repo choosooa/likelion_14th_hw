@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="page-container">
+        <img src="{% static 'images/다운로드.jpg' %}" alt="아기사자" width="250px" >
+        <p class="tag">LikeLion_14th_session</p>
+        <h1 class="title">2026 멋쟁이사자처럼 14기</h1>
+        <h6 class="welcome">백엔드 조수아 2차과제 !</h6>
+
+        <div class="section">
+            <div class="section-title">🦁 2주차 세션 🦁</div>
+            <ul>
+                <li>날짜 : {{ info.date }}</li>
+                <li>공동세션 주제 : {{ info.topic }}</li>
+                <li>주차 : {{ info.week }}</li>
+                <li>교육진행 : {{ info.instructor }}</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title">🦁 내용 정리! 🦁</div>
+            <ul>
+                {% for shortcut in shortcuts %}
+                <li>{{ shortcut }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
