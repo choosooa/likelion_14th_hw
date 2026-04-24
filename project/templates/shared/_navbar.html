@@ -1,6 +1,20 @@
-    <nav class="navbar-container">
-        <!-- mainpage 링크 연결 -->
-        <a class="navbar-link" href="{% url 'mainpage' %}">DGU_likelion_14th</a>
-        <!-- secondpage 링크 연결 -->
-        <a class="navbar-link" href="{% url 'secondpage' %}">Second Page</a>
-    </nav>
+{% load static %}    
+<nav class="navbar-container">
+    <!-- mainpage 링크 연결 -->
+    <a class="navbar-link" href="{% url 'mainpage' %}">DGU_likelion_14th</a>
+    <!-- secondpage 링크 연결 -->
+    <a class="navbar-link" href="{% url 'secondpage' %}">Second Page</a>
+
+    <div class="nav-item {% if request.resolver_match.url_name == 'postpage' %}active{% endif %}">
+        <a class="navbar-link" href="{% url 'main:postpage' %}">
+            <span class="nav-label">list</span>
+        </a>
+    </div>
+
+    <div class="nav-item {% if request.resolver_match.url_name == 'new_post' %}active{% endif %}">
+        <a class="navbar-link" href="{% url 'main:new_post' %}">
+            <span class="nav-label">new_post</span>
+        </a>
+    </div>
+
+</nav>
