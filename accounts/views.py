@@ -15,7 +15,7 @@ def login(request):
             auth.login(request, user)
             return redirect('main:postpage')
         else:
-            return render(request, 'acounts/login.html')
+            return render(request, 'accounts/login.html')
         
     elif request.method == 'GET':
         return render(request, 'accounts/login.html')
