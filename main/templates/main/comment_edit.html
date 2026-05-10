@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="comment-edit-wrapper">
+    <h2>댓글 수정</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <textarea name="content" required>{{ comment.content }}</textarea>
+
+        <div class="comment-edit-actions">
+            <button type="submit">수정 완료</button>
+            <a href="{% url 'main:detail' comment.post.id %}">취소</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
